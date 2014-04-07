@@ -7,6 +7,7 @@
 //
 
 #import "WeekView.h"
+#import "WeekDateHelper.h"
 
 @interface WeekView ()
 @property (weak, nonatomic) IBOutlet UILabel *dayOne;
@@ -31,16 +32,15 @@
     return self;
 }
 
--(void)setWeekDate:(NSInteger)date {
-    self.theDate = date;
-    self.dayOne.text = [NSString stringWithFormat:@"%d", date];
-    self.dayTwo.text = [NSString stringWithFormat:@"%d", date];
-    self.dayThree.text = [NSString stringWithFormat:@"%d", date];
-    self.dayFour.text = [NSString stringWithFormat:@"%d", date];
-    self.dayFive.text = [NSString stringWithFormat:@"%d", date];
-    self.daySix.text = [NSString stringWithFormat:@"%d", date];
-    self.daySeven.text = [NSString stringWithFormat:@"%d", date];
+-(void)setWeekDates:(NSArray *)weekDates {
     
+    self.dayOne.text = [NSString stringWithFormat:@"%d", [WeekDateHelper dayOfMonthFromDate:[weekDates objectAtIndex:0]]];
+    self.dayTwo.text = [NSString stringWithFormat:@"%d", [WeekDateHelper dayOfMonthFromDate:[weekDates objectAtIndex:1]]];
+    self.dayThree.text = [NSString stringWithFormat:@"%d", [WeekDateHelper dayOfMonthFromDate:[weekDates objectAtIndex:2]]];
+    self.dayFour.text = [NSString stringWithFormat:@"%d", [WeekDateHelper dayOfMonthFromDate:[weekDates objectAtIndex:3]]];
+    self.dayFive.text = [NSString stringWithFormat:@"%d", [WeekDateHelper dayOfMonthFromDate:[weekDates objectAtIndex:4]]];
+    self.daySix.text = [NSString stringWithFormat:@"%d", [WeekDateHelper dayOfMonthFromDate:[weekDates objectAtIndex:5]]];
+    self.daySeven.text = [NSString stringWithFormat:@"%d", [WeekDateHelper dayOfMonthFromDate:[weekDates objectAtIndex:6]]];
 }
 
 @end

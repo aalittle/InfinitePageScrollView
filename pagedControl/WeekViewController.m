@@ -8,6 +8,7 @@
 
 #import "WeekViewController.h"
 #import "WeekView.h"
+#import "WeekDateHelper.h"
 
 @interface WeekViewController ()
 
@@ -15,6 +16,7 @@
 @property (strong, nonatomic) WeekView *previousWeek;
 @property (strong, nonatomic) WeekView *currentWeek;
 @property (strong, nonatomic) WeekView *nextWeek;
+@property (assign, nonatomic) NSInteger weekIndex;
 @property (assign, nonatomic) CGFloat lastContentOffset;
 
 @end
@@ -36,6 +38,8 @@
     [self.scrollView addSubview:self.previousWeek];
     [self.scrollView addSubview:self.currentWeek];
     [self.scrollView addSubview:self.nextWeek];
+    
+    self.weekIndex = 0;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -46,20 +50,19 @@
     
     if ([self isScrollingRight]) {
         
-        NSInteger currentWeek = self.currentWeek.theDate + 1;
-        
-        [self.currentWeek setWeekDate:currentWeek];
-        [self.previousWeek setWeekDate:currentWeek - 1];
+        self.weekIndex += 1;
+        [self.currentWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:self.weekIndex date:[NSDate date]]];
+        [self.previousWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:self.weekIndex - 1 date:[NSDate date]]];
         self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width, 0);
-        [self.nextWeek setWeekDate:currentWeek + 1];
+        [self.nextWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:self.weekIndex + 1 date:[NSDate date]]];
     } else {
         
-        NSInteger currentWeek = self.currentWeek.theDate - 1;
-        
-        [self.currentWeek setWeekDate:currentWeek];
-        [self.nextWeek setWeekDate:currentWeek + 1];
+        self.weekIndex -= 1;
+
+        [self.currentWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:self.weekIndex date:[NSDate date]]];
+        [self.nextWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:self.weekIndex + 1 date:[NSDate date]]];
         self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width, 0);
-        [self.previousWeek setWeekDate:currentWeek - 1];
+        [self.previousWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:self.weekIndex - 1 date:[NSDate date]]];
     }
 }
 
@@ -83,9 +86,9 @@
     self.currentWeek.frame = CGRectMake(self.scrollView.frame.size.width, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     self.nextWeek.frame = CGRectMake(self.scrollView.frame.size.width * 2, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     
-    [self.previousWeek setWeekDate:2];
-    [self.currentWeek  setWeekDate:3];
-    [self.nextWeek setWeekDate:4];
+    [self.previousWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:-1 date:[NSDate date]]];
+    [self.currentWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:0 date:[NSDate date]]];
+    [self.nextWeek setWeekDates:[WeekDateHelper dateCollectionForNumWeeksFromNow:1 date:[NSDate date]]];
 
 }
 

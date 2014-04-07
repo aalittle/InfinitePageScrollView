@@ -23,6 +23,7 @@
 		EE41FE6918F3316500D9DF50 /* pagedControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE41FE6818F3316500D9DF50 /* pagedControlTests.m */; };
 		EE41FE7418F331C100D9DF50 /* WeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE41FE7318F331C100D9DF50 /* WeekView.m */; };
 		EE41FE7618F331D800D9DF50 /* WeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE41FE7518F331D800D9DF50 /* WeekView.xib */; };
+		EEB3417618F3514700CD47A1 /* WeekDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EEB3417518F3514700CD47A1 /* WeekDateHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		EE41FE7218F331C100D9DF50 /* WeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekView.h; sourceTree = "<group>"; };
 		EE41FE7318F331C100D9DF50 /* WeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekView.m; sourceTree = "<group>"; };
 		EE41FE7518F331D800D9DF50 /* WeekView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekView.xib; sourceTree = "<group>"; };
+		EEB3417418F3514700CD47A1 /* WeekDateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekDateHelper.h; sourceTree = "<group>"; };
+		EEB3417518F3514700CD47A1 /* WeekDateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekDateHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				EE41FE4F18F3316500D9DF50 /* Main.storyboard */,
 				EE41FE5218F3316500D9DF50 /* WeekViewController.h */,
 				EE41FE5318F3316500D9DF50 /* WeekViewController.m */,
+				EEB3417418F3514700CD47A1 /* WeekDateHelper.h */,
+				EEB3417518F3514700CD47A1 /* WeekDateHelper.m */,
 				EE41FE5518F3316500D9DF50 /* Images.xcassets */,
 				EE41FE4418F3316500D9DF50 /* Supporting Files */,
 			);
@@ -260,6 +265,7 @@
 			files = (
 				EE41FE7418F331C100D9DF50 /* WeekView.m in Sources */,
 				EE41FE5418F3316500D9DF50 /* WeekViewController.m in Sources */,
+				EEB3417618F3514700CD47A1 /* WeekDateHelper.m in Sources */,
 				EE41FE4E18F3316500D9DF50 /* AppDelegate.m in Sources */,
 				EE41FE4A18F3316500D9DF50 /* main.m in Sources */,
 			);
@@ -466,6 +472,7 @@
 				EE41FE6E18F3316500D9DF50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE41FE6F18F3316500D9DF50 /* Build configuration list for PBXNativeTarget "pagedControlTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +481,7 @@
 				EE41FE7118F3316500D9DF50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

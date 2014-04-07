@@ -12,6 +12,6 @@
 
 @property (assign, nonatomic) NSInteger theDate;
 
--(void)setWeekDate:(NSInteger)date;
+-(void)setWeekDates:(NSArray *)weekDates;
 
 @end
