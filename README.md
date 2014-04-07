@@ -5,4 +5,6 @@ A paged scrollview that allows you to page infinitely in either direction. Displ
 
 Check out a live demo, [here](https://app.io/jLnbAh).
 
+![Screenshot](https://raw.github.com/aalittle/InfinitePageScrollView/master/Screenshot.png)
+
 Sample app built to demonstrate a concept, but thought it might be helpful to others.
