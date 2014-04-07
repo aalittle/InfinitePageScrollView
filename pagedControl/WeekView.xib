@@ -60,7 +60,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.054901964960000001" green="0.61568629740000003" blue="0.81176477670000002" alpha="1" colorSpace="deviceRGB"/>
+            <color key="backgroundColor" red="0.2011242701" green="0.54292374060000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayFive" destination="uhq-Ou-YA9" id="kHS-Yr-9y3"/>
